@@ -23,11 +23,10 @@ import lombok.RequiredArgsConstructor;
 public class ClienteServiceImpl implements ClienteService {
 
 	private final ClienteRepository clienteRepository;
-//	private final GestionEmpleadosModule gestionEmpleadosModule;
 	private final ModelMapper modelMapper = new ModelMapper();
 	
-    // Claves para acceder a los valores del mapa
-    public static final String AGRUPAR = "AGRUPAR";
+    // Claves
+    public static final String NO_DATA_CLIENTE = "No se encontraron registros de clientes.";
 
     @Transactional
 	@Override
@@ -45,7 +44,7 @@ public class ClienteServiceImpl implements ClienteService {
 	        .collect(Collectors.toList());
 	    
 	    if (clientList.isEmpty()) {
-	    	throw new SuccessfulResponse("No se encontraron registros de clientes.");
+	    	throw new SuccessfulResponse(NO_DATA_CLIENTE);
 		}
 	    
 	    return clientList;

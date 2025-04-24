@@ -10,6 +10,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -27,12 +29,15 @@ public class ClienteEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @Column(name="nombre")
+    @Column(name="nombre", length = 50)
     private String nombre;
-    @Column(name="apellido")
+    
+    @Column(name="apellido" , length = 50)
     private String apellido;
+    
     @Column(name="edad")
-    private Long edad;
+    private Integer edad;
+    
     @Column(name="fechaNacimiento")
     private LocalDate fechaNacimiento;
 }
