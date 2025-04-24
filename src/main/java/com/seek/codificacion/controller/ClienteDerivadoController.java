@@ -1,0 +1,30 @@
+package com.seek.codificacion.controller;
+
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.seek.codificacion.dtos.ClienteDerivado;
+import com.seek.codificacion.services.ClienteDerivadoService;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/derivado")
+public class ClienteDerivadoController {
+
+	private final ClienteDerivadoService clienteDerivadoService;
+
+	@GetMapping("/cliente-derivado")
+	public ResponseEntity<List<ClienteDerivado>> clientesDerivados() {
+		return new ResponseEntity<>(clienteDerivadoService.clientesDerivados(), HttpStatus.OK);
+	}
+
+
+
+}
