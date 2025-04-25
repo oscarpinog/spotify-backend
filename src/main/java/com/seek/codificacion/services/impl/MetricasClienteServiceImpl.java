@@ -7,36 +7,35 @@ import com.seek.codificacion.services.MetricasClienteService;
 import com.seek.codificacion.utils.General;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class MetricasClienteServiceImpl implements MetricasClienteService {
 
-	private final ClienteRepository clienteRepository;
+    private final ClienteRepository clienteRepository;
 
-	// Claves
-	public static final String NO_DATA_CLIENTE = "No se encontraron registros de clientes.";
+    @Override
+    public Double promedioEdad() {
+        log.info("Iniciando cálculo de promedio de edad de los clientes");
 
-	@Override
-	public Double promedioEdad() {
+        Double promedio = clienteRepository.findAll().stream()
+                .mapToDouble(cliente -> cliente.getEdad())
+                .average()
+                .orElse(0);
 
-		/* Calcula el promedio de edad de todos los clientes
-		 Nota:Si queremos desacoplar el codigo podemos usar clienteRepository para
-		 obtener la lista de clientes
-		 */
-		return clienteRepository.findAll().stream()
-				.mapToDouble(cliente -> cliente.getEdad())
-				.average()
-				.orElse(0);
+        log.info("Promedio de edad calculado: {}", promedio);
+        return promedio;
+    }
 
-	}
+    @Override
+    public Double desviacion() {
+        log.info("Iniciando cálculo de la desviación estándar de la edad de los clientes");
 
-	@Override
-	public Double desviacion() {
-		/* Nota:Si queremos desacoplar el codigo podemos usar clienteRepository para
-		 obtener la lista de clientes
-		 */
-		return General.calcularDesviacionEstandar(clienteRepository.findAll());
-	}
+        Double desviacion = General.calcularDesviacionEstandar(clienteRepository.findAll());
 
+        log.info("Desviación estándar calculada: {}", desviacion);
+        return desviacion;
+    }
 }

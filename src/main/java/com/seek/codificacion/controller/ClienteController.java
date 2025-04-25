@@ -2,6 +2,7 @@ package com.seek.codificacion.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,15 +16,16 @@ import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/cliente") 
+@RequestMapping("/cliente")
 public class ClienteController {
-	
+
 	private final ClienteService clienteService;
-	
+
 	@PostMapping("/crear")
-  public ResponseEntity<Void> crearCliente(@RequestBody @Valid Cliente cliente) {
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+	public ResponseEntity<Void> crearCliente(@RequestBody @Valid Cliente cliente) {
 		clienteService.crearCliente(cliente);
 		return new ResponseEntity<>(HttpStatus.CREATED);
-  }
-	
+	}
+
 }

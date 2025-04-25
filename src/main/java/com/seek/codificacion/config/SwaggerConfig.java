@@ -16,7 +16,7 @@ public class SwaggerConfig {
     public OpenAPI apiConJwt() {
         return new OpenAPI()
             .info(new Info()
-                .title("API con Spring Security y JWT")
+                .title("SEEK - Oscar Rodriguez")
                 .version("v1"))
             .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
             .components(new Components()

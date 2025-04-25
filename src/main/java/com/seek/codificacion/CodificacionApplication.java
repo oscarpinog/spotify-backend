@@ -28,17 +28,24 @@ public class CodificacionApplication {
     @Bean
     public CommandLineRunner crearUsuarioPorDefecto(UsuarioRepository usuarioRepository, PasswordEncoder encoder) {
         return args -> {
-            if (usuarioRepository.findByUsername("admin").isEmpty()) {
+           // if (usuarioRepository.findByUsername("admin").isEmpty()) {
                 Usuario usuario = new Usuario();
                 usuario.setUsername("admin");
                 usuario.setPassword(encoder.encode("admin123")); 
-                usuario.setRol("ROLE_ADMIN");//ROLE_USER
+                usuario.setRol("ROLE_ADMIN");
 
                 usuarioRepository.save(usuario);
+                
+                Usuario usuarioUser = new Usuario();
+                usuarioUser.setUsername("user");
+                usuarioUser.setPassword(encoder.encode("user123")); 
+                usuarioUser.setRol("ROLE_USER");
 
-            } else {
-            	throw new InternalErrorResponse("Usuario admin ya existe. No se creó otro.");
-            }
+                usuarioRepository.save(usuarioUser);
+
+//            } else {
+//            	throw new InternalErrorResponse("Usuario admin ya existe. No se creó otro.");
+//            }
         };
     }
 
