@@ -75,5 +75,6 @@ http://localhost:8080/swagger-ui/index.html
 
 - Se utilizó la anotación `@Slf4j` en las clases `ServiceImpl` para registrar actividad del sistema y facilitar el monitoreo.
 
+## RECOMENDACIONES
 -Se recomienda crear clientes con el usuario admin para consumo de los servicios GET.
--Solo el servicio POST de crear clientes se puede hacer con ROL_ADMIN los demas con los roles ROLE_ADMIN - ROLE_USER
+-Solo el servicio POST de crear clientes se puede hacer con ROL_ADMIN, los endpoints GET con los roles ROLE_ADMIN - ROLE_USER
