@@ -115,6 +115,8 @@ docker run --name OracleXE -p 1521:1521 \
 
 ## ✅ Uso de SQL*PLUS desde el contenedor
 
+### Creacion de nuevo usuario!
+
 ### Verifica el nombre del contenedor:
 
 ```
