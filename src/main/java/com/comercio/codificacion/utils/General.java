@@ -5,34 +5,12 @@ import java.time.Period;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-import com.comercio.codificacion.entities.ClienteEntity;
 import com.comercio.codificacion.exceptions.SuccessfulResponse;
 
 public class General {
 
     // Constantes
 	public static final int EDAD_JUBILACION = 65;
-	
-	public static double calcularDesviacionEstandar(List<ClienteEntity> clientes) {
-	    
-	    if (clientes.size()<=0) {
-			throw new SuccessfulResponse("No es posible calcular desviacion porque no existen clientes");
-		}
-
-	    // 1. Calcular promedio
-	    double promedio = clientes.stream()
-	        .mapToInt(ClienteEntity::getEdad)
-	        .average()
-	        .orElse(0);
-
-	    // 2. Calcular la suma de los cuadrados de las diferencias respecto al promedio
-	    double sumaCuadrados = clientes.stream()
-	        .mapToDouble(c -> Math.pow(c.getEdad() - promedio, 2))
-	        .sum();
-
-	    // 3. Calcular desviación estándar
-	    return Math.sqrt(sumaCuadrados / clientes.size());
-	}
 
     /**
      * Días para su próximo cumpleaños

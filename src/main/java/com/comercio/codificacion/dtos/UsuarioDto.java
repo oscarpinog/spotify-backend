@@ -11,16 +11,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class Cliente implements Serializable{
+public class UsuarioDto implements Serializable{
 
 	private static final long serialVersionUID = 2764238622649305869L;
 	
-    @NotBlank(message ="El nombre no puede estar vacio")
-	private String nombre;
-    
-    @NotBlank(message ="El apellido no puede estar vacio")
-	private String apellido;
-    
-	private LocalDate fechaNacimiento;
+	private Long id;
+    private String nombre;
+    private String correoElectronico;
+    private String contrasena;
+    private Rol rol;
 
 }

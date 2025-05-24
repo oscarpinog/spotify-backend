@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.comercio.codificacion.entities.UsuarioEntity;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -25,7 +27,7 @@ public class UsuarioDetailsServiceImpl implements UserDetailsService {
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		log.info("Iniciando carga de detalles para el usuario: {}", username);
 
-		Usuario usuario = usuarioRepository.findByUsername(username).orElseThrow(() -> {
+		UsuarioEntity usuario = usuarioRepository.findByUsername(username).orElseThrow(() -> {
 			log.error("Usuario no encontrado: {}", username);
 			return new UsernameNotFoundException("Usuario no encontrado");
 		});

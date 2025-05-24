@@ -1,9 +1,5 @@
 package com.comercio.codificacion.entities;
 
-
-
-import java.time.LocalDate;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,27 +11,23 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "clientes")
-public class ClienteEntity {
+@Entity
+@Table(name = "usuario")
+public class UsuarioEntity {
 
-    @Id    
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
-    @Column(name="nombre", length = 50)
     private String nombre;
-    
-    @Column(name="apellido" , length = 50)
-    private String apellido;
-    
-    @Column(name="edad")
-    private Integer edad;
-    
-    @Column(name="fechaNacimiento")
-    private LocalDate fechaNacimiento;
+    @Column(name = "correo_electronico", unique = true)
+    private String correoElectronico;
+    private String username;
+    private String password;
+    private String rol; 
+
 }
