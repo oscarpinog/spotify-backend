@@ -71,9 +71,9 @@ http://localhost:8080/swagger-ui/index.html
 
 - Se utilizó la anotación `@Slf4j` en las clases `ServiceImpl` para registrar actividad del sistema y facilitar el monitoreo.
 
-## RECOMENDACIONES
--Se recomienda crear clientes con el usuario admin para consumo de los servicios GET.
--Solo el servicio POST de crear clientes se puede hacer con ROL_ADMIN, los endpoints GET con los roles ROLE_ADMIN - ROLE_USER
+## OTROS
+-El endpoint de Eliminar comerciantes solo se podra usar con el rol de ROL_ADMIN
+
 
 
 ## 🐳 Docker - Imagen Oracle 21c-xe
