@@ -60,8 +60,8 @@ http://localhost:8080/swagger-ui/index.html
 
 ```json
 {
-  "username": "user",
-  "password": "user123"
+  "username": "aux",
+  "password": "aux123"
 }
 ```
 
