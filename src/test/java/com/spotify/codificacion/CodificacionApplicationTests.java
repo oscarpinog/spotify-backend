@@ -1,4 +1,4 @@
-package com.seek.codificacion;
+package com.spotify.codificacion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
