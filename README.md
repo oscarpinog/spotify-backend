@@ -75,9 +75,6 @@ http://localhost:8080/swagger-ui/index.html
 
 - Se utilizó la anotación `@Slf4j` en las clases `ServiceImpl` para registrar actividad del sistema y facilitar el monitoreo.
 
-## OTROS
--El endpoint de Eliminar comerciantes solo se podra usar con el rol de ROL_ADMIN
-
 
 ## Base de datos H2
  
