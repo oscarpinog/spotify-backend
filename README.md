@@ -17,10 +17,8 @@
 
 ---
 
-## 🗄️ Base de Datos - Oracle
+## 🗄️ Base de Datos - H2
 
-- Se utiliza **Oracle** como base de datos.
--ajustar usuario y password en properties del proyecto.
 - El esquema debe ser creado previamente:
 
 - La propiedad en `application.properties` permite la creación/eliminación automática de tablas sin necesidad de scripts SQL manuales:
