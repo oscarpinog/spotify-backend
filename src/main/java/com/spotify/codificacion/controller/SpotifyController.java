@@ -23,10 +23,5 @@ public class SpotifyController {
         return ResponseEntity.ok(artist);
     }
     
-//  @GetMapping("/artist/{id}")
-//  public ResponseEntity<Map> getArtist(@PathVariable String id) {
-//      Map artist = spotifyService.getArtistById(id);
-//      return ResponseEntity.ok(artist);
-//  }
 }
 

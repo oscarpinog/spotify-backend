@@ -64,6 +64,10 @@ http://localhost:8080/swagger-ui/index.html
 ```
 
 ---
+## 🛠️ Pruebas Unitarias Junit - Mockito
+
+- Se realiza prueba unitarias
+
 
 ## 🛠️ Logs
 
