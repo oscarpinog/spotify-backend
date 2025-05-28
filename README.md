@@ -66,7 +66,9 @@ http://localhost:8080/swagger-ui/index.html
 ---
 ## 🛠️ Pruebas Unitarias Junit - Mockito
 
-- Se realiza prueba unitarias
+- Se realiza prueba unitarias en controller y serviceImpl
+# - Se recomienda la instalacion a traves del marketplace de ecLEmma Code Coverage, herramienta para ver visualmente el coverage de JunitTest.
+
 
 
 ## 🛠️ Logs
